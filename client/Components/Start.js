@@ -7,7 +7,7 @@ const Start = () => {
   }
   return (
     <div>
-        Start Here!
+        Start Here if you like eggs!
     </div>
   )
 }
