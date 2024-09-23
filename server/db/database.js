@@ -1,18 +1,17 @@
-const Sequelize = require('sequelize')
+const Sequelize = require('sequelize');
 
 const config = {
-  logging: false
+    logging: false,
 };
 
-if(process.env.DATABASE_URL){
-  config.dialectOptions = {
-    ssl: {
-      rejectUnauthorized: false
-    }
-  };
+if (process.env.DATABASE_URL) {
+    config.dialectOptions = {
+        ssl: {
+            rejectUnauthorized: false,
+        },
+    };
 }
 
-const db = new Sequelize('postgres://localhost:5432/BoilerPlate_db', config
-);
+const db = new Sequelize('postgres://localhost:5432/BoilerPlate_db', config);
 
-module.exports = db
+module.exports = db;

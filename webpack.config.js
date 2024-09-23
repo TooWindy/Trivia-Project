@@ -1,42 +1,34 @@
 const path = require('path');
 
-
 module.exports = {
-  mode: "development",
-  entry: [
-    'babel-polyfill', './client/index.js'
-  ],
-  output: {
-    path: __dirname,
-    filename: './public/bundle.js'
-  },
-  devtool: 'source-map',
-  devServer: {
-    static: {
-      directory: path.join(__dirname, 'public'),
+    mode: 'development',
+    entry: ['babel-polyfill', './client/index.js'],
+    output: {
+        path: __dirname,
+        filename: './public/bundle.js',
     },
-    compress: true,
-    port: 9000,
-  },
-  module: {
-    rules: [
-      {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader',
-        options: {
-          presets: [
-            '@babel/preset-react'
-          ]
-        }
-      },
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader',
-        ]
-      }
-    ]
-  }
-}
+    devtool: 'source-map',
+    devServer: {
+        static: {
+            directory: path.join(__dirname, 'public'),
+        },
+        compress: true,
+        port: 9000,
+    },
+    module: {
+        rules: [
+            {
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader',
+                options: {
+                    presets: ['@babel/preset-react'],
+                },
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader'],
+            },
+        ],
+    },
+};
